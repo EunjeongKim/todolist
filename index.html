@@ -6,14 +6,42 @@
     <title>Silver's TODO List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">  
 </head>
 <body>
-    <h1>Sliver's TODO List</h1>
-    <button id="btnAdd">New Item</button>
-    <ul id="todolist">
-        <li><input type="checkbox"/><span>Write First item</span></li>
-    </ul>
+    <h1 style= "text-align : center";>Sliver's TODO List</h1>
+    <!-- <p>
+        <input type="text" id="inputText">
+        <button id="btnAdd">New Item</button>
+    </p> -->
+
+    <!-- <ul id="todolist"> -->
+        <!-- <li><input type="checkbox"/><span>Write First item</span></li> -->
+    <!-- </ul> -->
+
+    <div class="container">
+        <div class="row">
+            <a href="todolist.html"><h1 id="todolistHeader"></h1></a>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <hr>
+                <p id="enter">Write what to do and Press enter!</p>
+
+                <p class="inputarea">
+                    <input type="text" id="inputText" placeholder="what to do">
+                    <ul id="todolist"></ul>
+                </p>
+            </div>
+            <div class="col-sm-6">
+                <hr>
+                <p id="enter">Done</p>
+                <ul id="doneList"></ul>
+            </div>
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>

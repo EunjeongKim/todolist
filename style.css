@@ -10,3 +10,33 @@ ul li {
     background: #eee;
     padding: 5px 10px;
 }
+
+.checked {
+    text-decoration: line-through;
+    color: red;
+    font-weight: bold;
+}
+
+#doneList li{
+    border-bottom: 1px dashed #ccc;
+    margin-bottom: 4px;
+    width: 30em;
+    height: 2.5em;
+    padding: 5px 10px;
+}
+
+#doneList li span{
+    font-size: 1.3em;
+    font-weight: 200;
+    padding-left: 10px;
+    vertical-align: middle;
+    cursor: default;
+    text-decoration: line-through;
+    color: red;
+}
+
+.fa-pencil-alt{
+    float: right;
+    padding: 5px;
+    visibility: hidden;
+}
