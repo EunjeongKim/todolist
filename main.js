@@ -41,9 +41,15 @@ function addNewItem(list, itemText) {
     pencilIcon.id = 'pencilIcon_'+id;
     pencilIcon.onclick = renameItem;
 
+    let minusIcon = document.createElement('i');
+    minusIcon.className = 'fas fa-minus';
+    minusIcon.id = 'minusIcon_'+id;
+    minusIcon.onclick = removeItem;
+
     listItem.addEventListener('mouseover', mouseover);
     listItem.addEventListener('mouseout', mouseout);
     listItem.appendChild(pencilIcon);
+    listItem.appendChild(minusIcon);
     listItem.appendChild(checkBox);
     listItem.appendChild(span);
     list.appendChild(listItem);
@@ -72,7 +78,8 @@ function renameItem() {
 }
 
 function removeItem() {
-    this.style.display = 'none';
+    let listItem = this.parentElement;
+    listItem.style.display = 'none';
 }
 
 function moveItem() {
@@ -96,10 +103,14 @@ function mouseover(){
     let pencilIconID = this.id.replace('li_', '');
     let aPencilIcon = document.getElementById('pencilIcon_'+pencilIconID);
     aPencilIcon.style.visibility = 'visible';
+    let aMinusIcon = document.getElementById('minusIcon_'+pencilIconID);
+    aMinusIcon.style.visibility = 'visible';    
 }
 
 function mouseout(){
     let pencilIconID = this.id.replace('li_', '');
     let aPencilIcon = document.getElementById('pencilIcon_'+pencilIconID);
     aPencilIcon.style.visibility = 'hidden';
+    let aMinusIcon = document.getElementById('minusIcon_'+pencilIconID);
+    aMinusIcon.style.visibility = 'hidden';    
 }
