@@ -1,4 +1,5 @@
 // let totalItems = 0;
+let todoList = document.getElementById('todolist');
 let doneList = document.getElementById('doneList');
 let inputText = document.getElementById('inputText');
 inputText.focus();
@@ -76,8 +77,19 @@ function removeItem() {
 
 function moveItem() {
     let itemID = this.id.replace('li_', '');
-    document.getElementById('cb_' + itemID).checked = true;
-    doneList.appendChild(this);
+    let item = document.getElementById('li_'+itemID);
+    let itemParentID = item.parentElement;
+    
+    if(itemParentID === doneList){
+        document.getElementById('cb_' + itemID).checked = false;
+        todoList.appendChild(item);
+    }
+    else{
+        document.getElementById('cb_' + itemID).checked = true;
+        doneList.appendChild(item);
+    }
+    // document.getElementById('cb_' + itemID).checked = true;
+    // doneList.appendChild(this);
 }
 
 function mouseover(){
